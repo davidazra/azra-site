@@ -73,6 +73,9 @@ function ajouterPanier(produit){
 
 // Afficher résumé du panier (max 3 produits, reste = '...')
 function afficherResumePanier(){
+  // Recharge le panier depuis localStorage pour rester synchronisé
+  panier = JSON.parse(localStorage.getItem('panier')) || {};
+
   let resume = [];
   let count = 0;
   for(let produit in panier){
@@ -98,6 +101,9 @@ function filtrerProduits(){
     produits[i].style.display = nom.includes(input) ? "" : "none";
   }
 }
+
+// Mettre à jour le résumé périodiquement pour rester synchronisé si panier.html change
+setInterval(afficherResumePanier, 1000); // toutes les 1 seconde
 </script>
 
 </body>
