@@ -30,6 +30,15 @@
       margin: 5px 0 0 0;
     }
 
+    /* Barre de recherche */
+    #recherche {
+      padding: 10px 15px;
+      width: 250px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
     /* Produits */
     .products {
       display: flex;
@@ -89,6 +98,15 @@
     <p>Livraison à Kinshasa</p>
   </header>
 
+  <!-- Barre de recherche -->
+  <div style="text-align:center; margin: 20px;">
+    <input 
+      type="text" 
+      id="recherche" 
+      placeholder="Que cherchez-vous ?" 
+      onkeyup="filtrerProduits()">
+  </div>
+
   <!-- Produits -->
   <div class="products">
 
@@ -121,15 +139,15 @@
     <button onclick="envoyerWhatsApp()">Envoyer la commande sur WhatsApp</button>
   </div>
 
-  <!-- JavaScript pour le panier avec quantité -->
+  <!-- JavaScript pour le panier et la recherche -->
   <script>
-    let panier = {}; // objet pour stocker produit => quantité
+    let panier = {}; // produit => quantité
 
     function ajouterPanier(produit) {
       if(panier[produit]) {
-        panier[produit] += 1; // incrémente la quantité
+        panier[produit] += 1;
       } else {
-        panier[produit] = 1; // premier ajout
+        panier[produit] = 1;
       }
       afficherPanier();
       alert(produit + " ajouté au panier !");
@@ -154,9 +172,19 @@
         details.push(produit + " x" + panier[produit]);
       }
       message += details.join(", ");
-      let numero = "243123456789"; // Remplace par ton numéro WhatsApp avec indicatif pays RDC
+      let numero = "243123456789"; // Remplace par ton numéro WhatsApp
       let lien = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
       window.open(lien, "_blank");
+    }
+
+    // Filtrer les produits selon la recherche
+    function filtrerProduits() {
+      let input = document.getElementById('recherche').value.toLowerCase();
+      let produits = document.getElementsByClassName('product');
+      for(let i = 0; i < produits.length; i++) {
+        let nom = produits[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+        produits[i].style.display = nom.includes(input) ? "" : "none";
+      }
     }
   </script>
 
