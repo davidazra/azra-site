@@ -5,204 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Azra - Boutique électronique</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Header */
-    header {
-      background-color: #333333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      color: white;
-      margin: 0;
-    }
-
-    header p {
-      color: white;
-      margin: 5px 0 0 0;
-    }
-
-    /* Barre de recherche */
-    #recherche {
-      padding: 10px 15px;
-      width: 250px;
-      border-radius: 25px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-
-    /* Produits */
-    .products {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 20px;
-    }
-
-    .product {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 10px;
-      width: 250px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .product img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-
-    .product h3 {
-      margin: 10px 0;
-    }
-
-    button {
-      background-color: orange;
-      color: black;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background-color: #ff9900;
-    }
-
-    /* Panier */
-    #panier {
-      padding: 20px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #333333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
+    body { font-family: Arial, sans-serif; background-color: #fff; margin:0; padding:0; }
+    header { background-color: #333; color:white; text-align:center; padding:20px; }
+    header h1 { margin:0; }
+    header p { margin:5px 0 0 0; }
+    #recherche { padding:10px 15px; width:250px; border-radius:25px; border:1px solid #ccc; font-size:16px; margin:20px auto; display:block;}
+    .products { display:flex; justify-content:space-around; flex-wrap:wrap; padding:20px; }
+    .product { border:1px solid #ddd; border-radius:10px; padding:15px; margin:10px; width:250px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+    .product img { max-width:100%; height:auto; border-radius:5px; }
+    .product h3 { margin:10px 0; }
+    button { background-color: orange; color:black; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; font-weight:bold; margin-top:10px;}
+    button:hover { background-color:#ff9900; }
+    #panier { padding:20px; text-align:center; font-weight:bold; }
+    footer { background-color:#333; color:white; text-align:center; padding:20px; margin-top:30px; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Azra</h1>
-    <p>Livraison à Kinshasa</p>
-  </header>
+<header>
+  <h1>Azra</h1>
+  <p>Livraison à Kinshasa</p>
+</header>
 
-  <!-- Barre de recherche -->
-  <div style="text-align:center; margin: 20px;">
-    <input 
-      type="text" 
-      id="recherche" 
-      placeholder="Que cherchez-vous ?" 
-      onkeyup="filtrerProduits()">
+<input type="text" id="recherche" placeholder="Que cherchez-vous ?" onkeyup="filtrerProduits()">
+
+<div class="products">
+  <div class="product">
+    <img src="casque_p9.png" alt="Casque P9" />
+    <h3>Casque P9</h3>
+    <button onclick="ajouterPanier('Casque P9')">Ajouter au panier</button>
   </div>
-
-  <!-- Produits -->
-  <div class="products">
-
-    <div class="product">
-      <img src="casque_p9.png" alt="Casque P9" />
-      <h3>Casque P9</h3>
-      <button onclick="ajouterPanier('Casque P9')">Ajouter au panier</button>
-    </div>
-
-    <div class="product">
-      <img src="laptop_stand.jpg" alt="Laptop Stand" />
-      <h3>Laptop Stand</h3>
-      <button onclick="ajouterPanier('Laptop Stand')">Ajouter au panier</button>
-    </div>
-
-    <div class="product">
-      <img src="usb_dongle_bluetooth.jpg" alt="USB Dongle Bluetooth" />
-      <h3>USB Dongle Bluetooth</h3>
-      <button onclick="ajouterPanier('USB Dongle Bluetooth')">Ajouter au panier</button>
-    </div>
-
+  <div class="product">
+    <img src="laptop_stand.jpg" alt="Laptop Stand" />
+    <h3>Laptop Stand</h3>
+    <button onclick="ajouterPanier('Laptop Stand')">Ajouter au panier</button>
   </div>
-
-  <!-- Panier et bouton WhatsApp -->
-  <div id="panier">
-    Panier : <span id="listePanier">0 produit(s)</span>
+  <div class="product">
+    <img src="usb_dongle_bluetooth.jpg" alt="USB Dongle Bluetooth" />
+    <h3>USB Dongle Bluetooth</h3>
+    <button onclick="ajouterPanier('USB Dongle Bluetooth')">Ajouter au panier</button>
   </div>
+</div>
 
-  <div style="text-align:center; margin-bottom: 30px;">
-    <button onclick="envoyerWhatsApp()">Envoyer la commande sur WhatsApp</button>
-  </div>
+<div id="panier">
+  <button onclick="window.location.href='panier.html'">Voir le panier</button>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    <p>Azra - Boutique électronique</p>
-    <p>Livraison à Kinshasa</p>
-    <p>© 2025 Tous droits réservés</p>
-  </footer>
+<footer>
+  <p>Azra - Boutique électronique</p>
+  <p>Livraison à Kinshasa</p>
+  <p>© 2025 Tous droits réservés</p>
+</footer>
 
-  <!-- JavaScript pour le panier et la recherche -->
-  <script>
-    let panier = {}; // produit => quantité
+<script>
+let panier = JSON.parse(localStorage.getItem('panier')) || {};
 
-    function ajouterPanier(produit) {
-      if(panier[produit]) {
-        panier[produit] += 1;
-      } else {
-        panier[produit] = 1;
-      }
-      afficherPanier();
-      alert(produit + " ajouté au panier !");
-    }
+function ajouterPanier(produit){
+  if(panier[produit]) panier[produit]+=1;
+  else panier[produit]=1;
+  localStorage.setItem('panier', JSON.stringify(panier));
+  alert(produit + " ajouté au panier !");
+}
 
-    function afficherPanier() {
-      let texte = [];
-      for(let produit in panier) {
-        texte.push(produit + " (" + panier[produit] + ")");
-      }
-      document.getElementById("listePanier").innerText = texte.join(", ");
-    }
-
-    function envoyerWhatsApp() {
-      if(Object.keys(panier).length === 0) {
-        alert("Votre panier est vide !");
-        return;
-      }
-      let message = "Je souhaite commander : ";
-      let details = [];
-      for(let produit in panier) {
-        details.push(produit + " x" + panier[produit]);
-      }
-      message += details.join(", ");
-      let numero = "243891182454"; // Ton numéro WhatsApp
-      let lien = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
-      window.open(lien, "_blank");
-    }
-
-    // Filtrer les produits selon la recherche
-    function filtrerProduits() {
-      let input = document.getElementById('recherche').value.toLowerCase();
-      let produits = document.getElementsByClassName('product');
-      for(let i = 0; i < produits.length; i++) {
-        let nom = produits[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-        produits[i].style.display = nom.includes(input) ? "" : "none";
-      }
-    }
-  </script>
+function filtrerProduits(){
+  let input = document.getElementById('recherche').value.toLowerCase();
+  let produits = document.getElementsByClassName('product');
+  for(let i=0;i<produits.length;i++){
+    let nom = produits[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+    produits[i].style.display = nom.includes(input) ? "" : "none";
+  }
+}
+</script>
 
 </body>
 </html>
