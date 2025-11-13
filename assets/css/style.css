@@ -25,13 +25,41 @@ body {
 
 /* ======= EN-TÊTE ======= */
 .header {
-  background: #ffffff;
+  background: #ffffff; /* blanc */
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: #ff6600; /* accent orange */
+  font-weight: 700;
 }
 
 .nav a {
-  color: #000000; /* texte noir pour liens */
+  margin-left: 15px;
   text-decoration: none;
+  color: #000000; /* texte noir */
   font-weight: 500;
   transition: 0.3s;
 }
@@ -48,7 +76,7 @@ body {
 
 /* ======= SECTION HERO ======= */
 .hero {
-  background: #fdf2e3; /* fond légèrement orangé clair pour contraste */
+  background: #fff8f0; /* fond blanc légèrement orangé */
   color: #000000;
   text-align: center;
   padding: 70px 20px;
@@ -56,6 +84,11 @@ body {
 
 .hero h2 span {
   color: #ff6600; /* accent orange */
+}
+
+.hero p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
 }
 
 .btn {
@@ -80,19 +113,19 @@ body {
 
 .categories h2 {
   margin-bottom: 30px;
-  color: #000000;
+  color: #000000; /* titre noir */
 }
 
 .category-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
   width: 90%;
   margin: auto;
 }
 
 .category {
-  background: #ffffff;
+  background: #ffffff; /* cartes blanches */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   padding: 15px;
@@ -115,7 +148,7 @@ body {
   max-height: 200px;
   object-fit: contain;
   border-radius: 8px;
-  background: #f9f3ef; /* léger fond pour images transparentes */
+  background: #fff4eb; /* léger fond orangé clair */
 }
 
 /* ======= PRODUITS EN VEDETTE ======= */
@@ -132,14 +165,14 @@ body {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
   width: 90%;
   margin: auto;
 }
 
 .product {
-  background: #ffffff;
+  background: #ffffff; /* cartes blanches */
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -162,7 +195,7 @@ body {
   max-height: 220px;
   object-fit: contain;
   border-radius: 8px;
-  background: #f9f3ef;
+  background: #fff4eb;
   display: block;
   margin: 0 auto;
 }
@@ -182,13 +215,13 @@ body {
 .whatsapp {
   text-align: center;
   padding: 40px 20px;
-  background: #fdf2e3; /* fond clair orangé */
+  background: #fff8f0; /* fond clair orangé */
   color: #000000;
 }
 
 .btn-whatsapp {
   display: inline-block;
-  background: #ff6600; /* bouton orange */
+  background: #ff6600;
   color: #ffffff;
   text-decoration: none;
   padding: 10px 25px;
@@ -203,7 +236,7 @@ body {
 
 /* ======= FOOTER ======= */
 .footer {
-  background: #333333; /* gris foncé pour contraste */
+  background: #333333; /* gris foncé */
   color: #ffffff;
   text-align: center;
   padding: 25px 0;
@@ -211,7 +244,7 @@ body {
 }
 
 .footer a {
-  color: #ff6600; /* liens orange */
+  color: #ff6600;
 }
 
 .footer a:hover {
@@ -234,5 +267,10 @@ body {
 
   .hero p {
     font-size: 1rem;
+  }
+
+  .category-list,
+  .product-grid {
+    grid-template-columns: 1fr; /* une carte par ligne pour mobile */
   }
 }
