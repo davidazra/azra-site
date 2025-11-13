@@ -1,5 +1,5 @@
 /* ===============================
-   AZRA SHOP - MAIN STYLE
+   AZRA SHOP - STYLE PRINCIPAL
    =============================== */
 
 /* ======= RESET ======= */
@@ -11,93 +11,56 @@
 }
 
 body {
-  background-color: #f7f8fa;
-  color: #222;
+  background-color: #ffffff; /* fond blanc */
+  color: #000000; /* texte principal noir */
   line-height: 1.6;
 }
 
-/* ======= CONTAINERS ======= */
+/* ======= CONTENEURS ======= */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
 }
 
-/* ======= HEADER ======= */
+/* ======= EN-TÊTE ======= */
 .header {
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 0;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 45px;
-  height: 45px;
-}
-
-.logo h1 {
-  font-size: 1.5rem;
-  color: #0078ff;
-  font-weight: 700;
+  background: #ffffff; /* blanc */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* légère ombre */
 }
 
 .nav a {
-  margin-left: 15px;
+  color: #555555; /* gris/orage */
   text-decoration: none;
-  color: #333;
   font-weight: 500;
   transition: 0.3s;
 }
 
 .nav a:hover,
 .nav a.active {
-  color: #0078ff;
+  color: #333333; /* gris plus foncé */
 }
 
 .cart-link {
   font-weight: bold;
+  color: #000000; /* texte noir pour le panier */
 }
 
-/* ======= HERO ======= */
+/* ======= SECTION HERO ======= */
 .hero {
-  background: linear-gradient(to right, #0078ff, #00a3ff);
-  color: #fff;
+  background: #f5f5f5; /* gris très clair pour contraste */
+  color: #000000; /* texte noir */
   text-align: center;
   padding: 70px 20px;
 }
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.hero span {
-  color: #ffdf00;
-}
-
-.hero p {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
+.hero h2 span {
+  color: #555555; /* accent gris/orage */
 }
 
 .btn {
-  background: #fff;
-  color: #0078ff;
+  background: #555555; /* bouton gris/orage */
+  color: #ffffff; /* texte blanc */
   padding: 10px 20px;
   border-radius: 25px;
   text-decoration: none;
@@ -106,11 +69,11 @@ body {
 }
 
 .btn:hover {
-  background: #ffdf00;
-  color: #000;
+  background: #333333; /* hover gris plus sombre */
+  color: #ffffff;
 }
 
-/* ======= CATEGORIES ======= */
+/* ======= CATÉGORIES ======= */
 .categories {
   text-align: center;
   padding: 50px 0;
@@ -118,7 +81,7 @@ body {
 
 .categories h2 {
   margin-bottom: 30px;
-  color: #0078ff;
+  color: #000000; /* titre en noir */
 }
 
 .category-list {
@@ -130,7 +93,7 @@ body {
 }
 
 .category {
-  background: #fff;
+  background: #ffffff; /* cartes blanches */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   padding: 15px;
@@ -153,18 +116,18 @@ body {
   max-height: 200px;
   object-fit: contain;
   border-radius: 8px;
-  background: #fff;
+  background: #f0f0f0; /* léger fond pour images transparentes */
 }
 
-/* ======= FEATURED PRODUCTS ======= */
+/* ======= PRODUITS EN VEDETTE ======= */
 .featured {
-  background: #fff;
+  background: #ffffff;
   padding: 50px 0;
   text-align: center;
 }
 
 .featured h2 {
-  color: #0078ff;
+  color: #000000; /* titre noir */
   margin-bottom: 30px;
 }
 
@@ -177,7 +140,7 @@ body {
 }
 
 .product {
-  background: #f8f9fa;
+  background: #ffffff; /* cartes blanches */
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -200,34 +163,34 @@ body {
   max-height: 220px;
   object-fit: contain;
   border-radius: 8px;
-  background: #fff;
+  background: #f0f0f0;
   display: block;
   margin: 0 auto;
 }
 
 .product h3 {
   margin: 10px 0 5px;
-  color: #333;
+  color: #000000; /* texte noir */
 }
 
 .price {
-  color: #0078ff;
+  color: #555555; /* gris/orage pour prix */
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-/* ======= WHATSAPP SECTION ======= */
+/* ======= SECTION WHATSAPP ======= */
 .whatsapp {
   text-align: center;
   padding: 40px 20px;
-  background: #0078ff;
-  color: #fff;
+  background: #f5f5f5; /* gris très clair */
+  color: #000000;
 }
 
 .btn-whatsapp {
   display: inline-block;
-  background: #25D366;
-  color: #fff;
+  background: #555555; /* gris/orage */
+  color: #ffffff;
   text-decoration: none;
   padding: 10px 25px;
   border-radius: 25px;
@@ -236,26 +199,24 @@ body {
 }
 
 .btn-whatsapp:hover {
-  background: #1da851;
+  background: #333333;
 }
 
 /* ======= FOOTER ======= */
 .footer {
-  background: #111;
-  color: #ccc;
+  background: #555555; /* gris/orage foncé */
+  color: #ffffff;
   text-align: center;
   padding: 25px 0;
   font-size: 0.9rem;
 }
 
 .footer a {
-  color: #0078ff;
-  text-decoration: none;
-  margin: 0 5px;
+  color: #ffffff;
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  color: #dddddd;
 }
 
 /* ======= RESPONSIVE ======= */
