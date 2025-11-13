@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panier - Azra</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color:#fff; margin:0; padding:0; }
+    header { background-color:#333; color:white; text-align:center; padding:20px; }
+    header h1, header p { margin:0; }
+    .cart-container { padding:20px; max-width:600px; margin:0 auto; }
+    .cart-item { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #ddd; padding:10px 0; }
+    .cart-item img { width:50px; height:auto; margin-right:10px; }
+    .cart-item-name { flex:2; }
+    .cart-item-quantity { display:flex; align-items:center; gap:5px; }
+    button { background-color: orange; color:black; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; font-weight:bold; }
+    button:hover { background-color:#ff9900; }
+    #actions { text-align:center; margin-top:20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Panier</h1>
+  <p>Azra - Boutique électronique</p>
+</header>
+
+<div class="cart-container" id="cartContainer">
+  <!-- Les produits du panier seront affichés ici -->
+</div>
+
+<div id="actions">
+  <button onclick="window.location.href='index.html'">Continuer vos achats</button>
+</div>
+
+<script>
+let panier = JSON.parse(localStorage.getItem('panier')) || {};
+
+// Miniatures pour chaque produit
+let images = {
+  "Casque P9":"casque_p9.png",
+  "Laptop Stand":"laptop_stand.jpg",
+  "USB Dongle Bluetooth":"usb_dongle_bluetooth.jpg"
+};
+
+function afficherPanier(){
+  const container = document.getElementById('cartContainer');
+  container.innerHTML = '';
+  for(let produit in panier){
+    let div = document.createElement('div');
+    div.className='cart-item';
+    div.innerHTML = `
+      <img src="${images[produit]}" alt="${produit}">
+      <div class="cart-item-name">${produit}</div>
+      <div class="cart-item-quantity">
+        <button onclick="modifierQuantite('${produit}',-1)">-</button>
+        <span>${panier[produit]}</span>
+        <button onclick="modifierQuantite('${produit}',1)">+</button>
+      </div>
+    `;
+    container.appendChild(div);
+  }
+}
+
+function modifierQuantite(produit, valeur){
+  panier[produit] += valeur;
+  if(panier[produit]<=0) delete panier[produit];
+  localStorage.setItem('panier', JSON.stringify(panier));
+  afficherPanier();
+}
+
+// Affichage initial
+afficherPanier();
+</script>
+
+</body>
+</html>
 
