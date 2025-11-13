@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azra - Accessoires électroniques</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; 
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background-color: #333; 
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0; 
+      font-size: 2em; 
+      color: white;
+    }
+
+    header p {
+      margin: 5px 0 0 0;
+      color: white;
+    }
+
+    /* Bande Ventes Flash */
+    .flash-sale {
+      background-color: orange;
+      color: white;
+      padding: 10px 0;
+      font-weight: bold;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    /* Barre de recherche */
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 20px 0;
+    }
+
+    .search-bar input {
+      width: 300px;
+      padding: 10px 15px;
+      border-radius: 50px 0 0 50px;
+      border: 2px solid orange;
+      outline: none;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .search-bar input:focus {
+      box-shadow: 0 0 5px orange;
+    }
+
+    .search-bar button {
+      background-color: orange;
+      color: white;
+      border: 2px solid orange;
+      border-left: none;
+      border-radius: 0 50px 50px 0;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .search-bar button:hover {
+      background-color: darkorange;
+    }
+
+    .container { 
+      max-width: 1000px; 
+      margin: 0 auto; 
+      padding: 0 20px; 
+    }
+
+    /* Grille produits */
+    .products { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 20px; 
+      justify-content: center; 
+    }
+
+    .product { 
+      border: 1px solid #ccc; 
+      border-radius: 8px; 
+      width: 300px; 
+      padding: 15px; 
+      text-align: center; 
+      background-color: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .product img { width: 100%; border-radius: 5px; }
+    .product h2 { font-size: 1.2em; margin: 10px 0 5px 0; }
+    .product p { margin: 5px 0 10px 0; }
+
+    /* Boutons */
+    .btn-add, .btn-whatsapp {
+      display: inline-block;
+      background-color: orange;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 5px 0;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .btn-add:hover, .btn-whatsapp:hover {
+      background-color: darkorange;
+      color: white;
+    }
+
+    .btn-remove { 
+      background-color: orange; 
+      color: white; 
+      border: none; 
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-remove:hover { background-color: darkorange; }
+
+    /* Mini-panier intégré */
+    #cart {
+      border:1px solid orange; 
+      padding:10px; 
+      margin-bottom:20px; 
+      border-radius:5px; 
+    }
+
+    footer { 
+      text-align: center; 
+      padding: 20px; 
+      background-color: #f5f5f5; 
+      margin-top: 40px; 
+    }
+
+    @media (max-width: 650px) {
+      .products { flex-direction: column; align-items: center; }
+      .search-bar input { width: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Azra</h1>
+    <p>Livraison à Kinshasa</p>
+  </header>
+
+  <!-- Bande Ventes Flash -->
+  <div class="flash-sale">
+    <marquee behavior="scroll" direction="left">
+      🔥 Vente Flash ! Casque P9 à -20% &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; Laptop Stand à -15% &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; USB Dongle Bluetooth 5.0 à -10%
+    </marquee>
+  </div>
+
+  <!-- Barre de recherche -->
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Que cherchez-vous ?" />
+    <button id="search-btn">🔍</button>
+  </div>
+
+  <div class="container">
+    <!-- Mini-panier -->
+    <div id="cart">
+      <h3>Votre Panier :</h3>
+      <ul id="cart-items"><li>Panier vide</li></ul>
+      <a id="cart-whatsapp" class="btn-whatsapp" href="https://wa.me/message/TGSIVV23JF6KK1" target="_blank">Envoyer la commande sur WhatsApp</a>
+    </div>
+
+    <h2>Nos Produits Phare</h2>
+    <div class="products">
+
+      <div class="product">
+        <img src="images/casque_p9.png" alt="Casque P9">
+        <h2>Casque P9</h2>
+        <p>Casque audio haute qualité, Bluetooth, micro intégré.</p>
+        <button class="btn-add" data-product="Casque P9">Ajouter au panier</button>
+      </div>
+
+      <div class="product">
+        <img src="images/usb_dongle_bluetooth.jpg" alt="USB Dongle Bluetooth 5.0">
+        <h2>USB Dongle Bluetooth 5.0</h2>
+        <p>Adaptateur USB pour connecter vos appareils en Bluetooth 5.0.</p>
+        <button class="btn-add" data-product="USB Dongle Bluetooth 5.0">Ajouter au panier</button>
+      </div>
+
+      <div class="product">
+        <img src="images/laptop_stand.jpg" alt="Laptop Stand">
+        <h2>Laptop Stand</h2>
+        <p>Support pour ordinateur portable, pliable et ergonomique.</p>
+        <button class="btn-add" data-product="Laptop Stand">Ajouter au panier</button>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Azra. Tous droits réservés.</footer>
+
+  <script>
+    const cart = {};
+    const cartItems = document.getElementById('cart-items');
+    const cartWhatsapp = document.getElementById('cart-whatsapp');
+
+    function updateCart() {
+      cartItems.innerHTML = '';
+      const productKeys = Object.keys(cart);
+      if (productKeys.length === 0) {
+        cartItems.innerHTML = '<li>Panier vide</li>';
+      } else {
+        productKeys.forEach(key => {
+          const li = document.createElement('li');
+          li.textContent = `${key} x ${cart[key]}`;
+
+          const btnRemove = document.createElement('button');
+          btnRemove.textContent = 'Supprimer';
+          btnRemove.className = 'btn-remove';
+          btnRemove.onclick = () => {
+            cart[key]--;
+            if (cart[key] <= 0) delete cart[key];
+            updateCart();
+          };
+
+          li.appendChild(btnRemove);
+          cartItems.appendChild(li);
+        });
+      }
+
+      const productsText = encodeURIComponent(productKeys.map(k => `${k} x ${cart[k]}`).join(', '));
+      cartWhatsapp.href = `https://wa.me/message/TGSIVV23JF6KK1?text=Bonjour,+je+suis+intéressé+par+les produits : ${productsText}`;
+    }
+
+    document.querySelectorAll('.btn-add').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const product = btn.getAttribute('data-product');
+        cart[product] = cart[product] ? cart[product]+1 : 1;
+        updateCart();
+      });
+    });
+
+    // Recherche
+    const searchInput = document.getElementById('search-input');
+    const searchBtn = document.getElementById('search-btn');
+
+    searchBtn.addEventListener('click', () => {
+      const query = searchInput.value.toLowerCase();
+      const products = document.querySelectorAll('.product');
+      products.forEach(p => {
+        const name = p.querySelector('h2').textContent.toLowerCase();
+        p.style.display = name.includes(query) ? 'block' : 'none';
+      });
+    });
+
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') searchBtn.click();
+    });
+  </script>
+</body>
+</html>
