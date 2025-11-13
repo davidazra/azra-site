@@ -1,5 +1,5 @@
 /* ===============================
-   AZRA SHOP - STYLE PRINCIPAL
+   AZRA SHOP - MAIN STYLE
    =============================== */
 
 /* ======= RESET ======= */
@@ -123,8 +123,8 @@ body {
 
 .category-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
   width: 90%;
   margin: auto;
 }
@@ -135,6 +135,12 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   padding: 15px;
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-height: 320px;
 }
 
 .category:hover {
@@ -143,17 +149,14 @@ body {
 
 .category img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
   border-radius: 8px;
+  background: #fff;
 }
 
-.category h3 {
-  margin-top: 10px;
-  color: #222;
-}
-
-/* ======= PRODUITS VEDETTES ======= */
+/* ======= FEATURED PRODUCTS ======= */
 .featured {
   background: #fff;
   padding: 50px 0;
@@ -167,8 +170,8 @@ body {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
   width: 90%;
   margin: auto;
 }
@@ -179,6 +182,12 @@ body {
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-height: 320px;
 }
 
 .product:hover {
@@ -187,9 +196,13 @@ body {
 
 .product img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
   border-radius: 8px;
+  background: #fff;
+  display: block;
+  margin: 0 auto;
 }
 
 .product h3 {
@@ -263,4 +276,3 @@ body {
     font-size: 1rem;
   }
 }
-
