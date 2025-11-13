@@ -1,1 +1,22 @@
+<main>
+  <h2 style="text-align:center;">Nos produits</h2>
+  <input type="text" id="recherche" placeholder="Que cherchez-vous ?" onkeyup="filtrerProduits()" style="display:block; margin:0 auto 20px auto; padding:10px 15px; width:250px; border-radius:25px; border:1px solid #ccc;">
+  <div class="products" style="display:flex; justify-content:space-around; flex-wrap:wrap;">
+      <div class="product" style="border:1px solid #ddd; border-radius:10px; padding:15px; margin:10px; width:250px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        <img src="casque_p9.png" alt="Casque P9" style="max-width:100%; border-radius:5px;">
+        <h3>Casque P9</h3>
+        <button onclick="ajouterPanier('Casque P9')">Ajouter au panier</button>
+      </div>
+      <div class="product" style="border:1px solid #ddd; border-radius:10px; padding:15px; margin:10px; width:250px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        <img src="laptop_stand.jpg" alt="Laptop Stand" style="max-width:100%; border-radius:5px;">
+        <h3>Laptop Stand</h3>
+        <button onclick="ajouterPanier('Laptop Stand')">Ajouter au panier</button>
+      </div>
+      <div class="product" style="border:1px solid #ddd; border-radius:10px; padding:15px; margin:10px; width:250px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        <img src="usb_dongle_bluetooth.jpg" alt="USB Dongle Bluetooth" style="max-width:100%; border-radius:5px;">
+        <h3>USB Dongle Bluetooth</h3>
+        <button onclick="ajouterPanier('USB Dongle Bluetooth')">Ajouter au panier</button>
+      </div>
+  </div>
+</main>
 
