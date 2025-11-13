@@ -88,6 +88,15 @@
       text-align: center;
       font-weight: bold;
     }
+
+    /* Footer */
+    footer {
+      background-color: #333333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -139,6 +148,13 @@
     <button onclick="envoyerWhatsApp()">Envoyer la commande sur WhatsApp</button>
   </div>
 
+  <!-- Footer -->
+  <footer>
+    <p>Azra - Boutique électronique</p>
+    <p>Livraison à Kinshasa</p>
+    <p>© 2025 Tous droits réservés</p>
+  </footer>
+
   <!-- JavaScript pour le panier et la recherche -->
   <script>
     let panier = {}; // produit => quantité
@@ -172,7 +188,7 @@
         details.push(produit + " x" + panier[produit]);
       }
       message += details.join(", ");
-      let numero = "+243891182454"; // Remplace par ton numéro WhatsApp
+      let numero = "243891182454"; // Ton numéro WhatsApp
       let lien = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
       window.open(lien, "_blank");
     }
