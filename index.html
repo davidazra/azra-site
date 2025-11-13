@@ -3,47 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Azra - Boutique électronique</title>
+<title>Azra - Accueil</title>
 <style>
-  body { font-family: Arial, sans-serif; background-color:#fff; margin:0; padding:0; }
-  header { background-color:#333; color:white; padding:15px 20px; position:fixed; width:100%; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; }
-  header h1 { margin:0; font-size:24px; color:orange; }
-  nav a { color:white; margin-left:15px; text-decoration:none; font-weight:bold; }
+  body { font-family: Verdana, sans-serif; background-color:#fff; margin:0; padding:0; }
+  header { background-color:#333; color:white; padding:10px 20px; position:fixed; width:100%; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; }
+  header h1 { margin:0; font-size:20px; color:orange; }
+  nav a { color:white; margin-left:12px; text-decoration:none; font-weight:bold; font-size:14px; }
   nav a:hover { color:orange; }
-
-  main { margin-top:120px; }
-
-  /* Bandeau défilant */
+  main { margin-top:100px; padding:20px; }
   #bandeau { background-color:orange; color:white; white-space:nowrap; overflow:hidden; position:relative; height:30px; display:flex; align-items:center; font-weight:bold; }
   #texteDefilant { position:absolute; white-space:nowrap; will-change:transform; }
-
-  section { padding:40px 20px; }
-  section h2 { text-align:center; margin-bottom:20px; }
-
-  /* Barre de recherche */
-  #recherche { padding:10px 15px; width:250px; border-radius:25px; border:1px solid #ccc; font-size:16px; margin:0 auto 20px auto; display:block; }
-
-  /* Produits */
-  .products { display:flex; justify-content:space-around; flex-wrap:wrap; }
-  .product { border:1px solid #ddd; border-radius:10px; padding:15px; margin:10px; width:250px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-  .product img { max-width:100%; height:auto; border-radius:5px; }
-  .product h3 { margin:10px 0; }
-  button { background-color: orange; color:black; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; font-weight:bold; margin-top:10px;}
-  button:hover { background-color:#ff9900; }
-
-  /* Résumé panier */
   #panier { text-align:center; margin-top:20px; }
-  #resumePanier { margin-bottom:10px; font-weight:bold; }
-
-  /* Contact */
-  #contact form { max-width:400px; margin:0 auto; display:flex; flex-direction:column; }
-  #contact input, #contact textarea { margin-bottom:15px; padding:10px; border-radius:5px; border:1px solid #ccc; font-size:16px; }
-  #contact button { width:150px; align-self:center; }
-
-  /* Footer */
+  #resumePanier { margin-bottom:10px; font-weight:bold; font-size:14px; }
   footer { background-color:#333; color:white; text-align:center; padding:20px; margin-top:30px; }
-
-  /* Bouton WhatsApp flottant */
   #whatsapp { position:fixed; bottom:20px; right:20px; background-color:#25D366; color:white; border-radius:50%; width:60px; height:60px; text-align:center; font-size:30px; line-height:60px; box-shadow:0 2px 5px rgba(0,0,0,0.3); z-index:1000; text-decoration:none; }
 </style>
 </head>
@@ -52,76 +24,28 @@
 <header>
   <h1>Azra</h1>
   <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#apropos">À propos</a>
-    <a href="#produits">Produits</a>
-    <a href="#contact">Nous contacter</a>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="produits.html">Produits</a>
+    <a href="contact.html">Nous contacter</a>
   </nav>
 </header>
 
 <main>
-  <!-- Bandeau défilant -->
   <div id="bandeau">
     <div id="texteDefilant">
       🚀 Ventes Flash ! Casque P9 à prix spécial ! | 💻 Laptop Stand en promo ! | 🔌 USB Dongle Bluetooth disponible !
     </div>
   </div>
 
-  <!-- Section Accueil -->
   <section id="accueil">
     <h2>Bienvenue chez Azra</h2>
+    <p style="text-align:center; max-width:600px; margin:0 auto;">Votre boutique électronique de confiance à Kinshasa. Produits de qualité et service rapide.</p>
     <div id="panier">
       <div id="resumePanier">Panier : 0 produit(s)</div>
       <button onclick="window.location.href='panier.html'">Voir le panier</button>
     </div>
   </section>
-
-  <!-- Section À propos -->
-  <section id="apropos">
-    <h2>À propos de nous</h2>
-    <p style="max-width:600px; margin:0 auto; text-align:center;">
-      Azra est votre boutique électronique de confiance à Kinshasa. Nous proposons des produits de qualité et un service rapide. Notre mission est de vous offrir une expérience d'achat simple et agréable.
-    </p>
-  </section>
-
-  <!-- Section Produits -->
-  <section id="produits">
-    <h2>Nos produits</h2>
-    <input type="text" id="recherche" placeholder="Que cherchez-vous ?" onkeyup="filtrerProduits()">
-    <div class="products">
-      <div class="product">
-        <img src="casque_p9.png" alt="Casque P9" />
-        <h3>Casque P9</h3>
-        <button onclick="ajouterPanier('Casque P9')">Ajouter au panier</button>
-      </div>
-      <div class="product">
-        <img src="laptop_stand.jpg" alt="Laptop Stand" />
-        <h3>Laptop Stand</h3>
-        <button onclick="ajouterPanier('Laptop Stand')">Ajouter au panier</button>
-      </div>
-      <div class="product">
-        <img src="usb_dongle_bluetooth.jpg" alt="USB Dongle Bluetooth" />
-        <h3>USB Dongle Bluetooth</h3>
-        <button onclick="ajouterPanier('USB Dongle Bluetooth')">Ajouter au panier</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Contact -->
-  <section id="contact">
-    <h2>Nous contacter</h2>
-    <form>
-      <input type="text" placeholder="Nom" required>
-      <input type="email" placeholder="Email" required>
-      <textarea rows="4" placeholder="Message" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-    <p style="text-align:center; margin-top:10px;">
-      Ou contactez-nous directement sur WhatsApp : 
-      <a href="https://wa.me/243891182454?text=Bonjour%20Azra!" target="_blank" style="color:orange; font-weight:bold;">Cliquez ici</a>
-    </p>
-  </section>
-
 </main>
 
 <footer>
@@ -130,7 +54,7 @@
   <p>© 2025 Tous droits réservés</p>
 </footer>
 
-<a id="whatsapp" href="https://wa.me/243891182454?text=Bonjour%20Azra!%20Je%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20produits." target="_blank">&#128241;</a>
+<a id="whatsapp" href="https://wa.me/243891182454?text=Bonjour%20Azra!" target="_blank">&#128241;</a>
 
 <script>
 /* Bandeau défilant */
@@ -139,46 +63,25 @@ let position = window.innerWidth;
 function defiler(){
   position--;
   texte.style.transform = `translateX(${position}px)`;
-  if(position < -texte.offsetWidth){
-    position = window.innerWidth;
-  }
+  if(position < -texte.offsetWidth) position = window.innerWidth;
   requestAnimationFrame(defiler);
 }
 defiler();
 
 /* Panier */
 let panier = JSON.parse(localStorage.getItem('panier')) || {};
-function ajouterPanier(produit){
-  if(panier[produit]) panier[produit] +=1;
-  else panier[produit] =1;
-  localStorage.setItem('panier', JSON.stringify(panier));
-  afficherResumePanier();
-}
 function afficherResumePanier(){
   panier = JSON.parse(localStorage.getItem('panier')) || {};
   let resume = [];
   let count = 0;
   for(let produit in panier){
-    if(count <3){
-      resume.push(panier[produit]+" "+produit);
-      count++;
-    }
+    if(count <3){ resume.push(panier[produit]+" "+produit); count++; }
   }
   if(Object.keys(panier).length>3) resume.push('...');
   document.getElementById('resumePanier').innerText = resume.join(', ');
 }
 afficherResumePanier();
 setInterval(afficherResumePanier, 1000);
-
-/* Recherche */
-function filtrerProduits(){
-  let input = document.getElementById('recherche').value.toLowerCase();
-  let produits = document.getElementsByClassName('product');
-  for(let i=0;i<produits.length;i++){
-    let nom = produits[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-    produits[i].style.display = nom.includes(input) ? "" : "none";
-  }
-}
 </script>
 
 </body>
