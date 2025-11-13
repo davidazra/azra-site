@@ -16,14 +16,14 @@ body {
   line-height: 1.6;
 }
 
-/* ======= CONTENEURS ======= */
+/* ======= CONTAINERS ======= */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
 }
 
-/* ======= EN-TÊTE ======= */
+/* ======= HEADER ======= */
 .header {
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -73,7 +73,7 @@ body {
   font-weight: bold;
 }
 
-/* ======= SECTION HERO ======= */
+/* ======= HERO ======= */
 .hero {
   background: linear-gradient(to right, #0078ff, #00a3ff);
   color: #fff;
@@ -110,7 +110,7 @@ body {
   color: #000;
 }
 
-/* ======= CATÉGORIES ======= */
+/* ======= CATEGORIES ======= */
 .categories {
   text-align: center;
   padding: 50px 0;
@@ -123,8 +123,8 @@ body {
 
 .category-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   width: 90%;
   margin: auto;
 }
@@ -135,12 +135,6 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   padding: 15px;
   transition: 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  min-height: 320px;
 }
 
 .category:hover {
@@ -149,14 +143,17 @@ body {
 
 .category img {
   width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: contain;
+  height: 180px;
+  object-fit: cover;
   border-radius: 8px;
-  background: #fff;
 }
 
-/* ======= PRODUITS EN VEDETTE ======= */
+.category h3 {
+  margin-top: 10px;
+  color: #222;
+}
+
+/* ======= PRODUITS VEDETTES ======= */
 .featured {
   background: #fff;
   padding: 50px 0;
@@ -170,8 +167,8 @@ body {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
   width: 90%;
   margin: auto;
 }
@@ -182,12 +179,6 @@ body {
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  min-height: 320px;
 }
 
 .product:hover {
@@ -196,13 +187,9 @@ body {
 
 .product img {
   width: 100%;
-  height: auto;
-  max-height: 220px;
-  object-fit: contain;
+  height: 180px;
+  object-fit: cover;
   border-radius: 8px;
-  background: #fff;
-  display: block;
-  margin: 0 auto;
 }
 
 .product h3 {
@@ -216,7 +203,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* ======= SECTION WHATSAPP ======= */
+/* ======= WHATSAPP SECTION ======= */
 .whatsapp {
   text-align: center;
   padding: 40px 20px;
