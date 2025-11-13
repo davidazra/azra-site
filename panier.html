@@ -15,7 +15,7 @@
     .cart-item-quantity { display:flex; align-items:center; gap:5px; }
     button { background-color: orange; color:black; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; font-weight:bold; }
     button:hover { background-color:#ff9900; }
-    #actions { text-align:center; margin-top:20px; }
+    #actions { display:flex; justify-content:space-between; margin-top:20px; max-width:600px; margin-left:auto; margin-right:auto; }
   </style>
 </head>
 <body>
@@ -31,6 +31,7 @@
 
 <div id="actions">
   <button onclick="window.location.href='index.html'">Continuer vos achats</button>
+  <button onclick="commanderWhatsApp()">Commander</button>
 </div>
 
 <script>
@@ -69,10 +70,26 @@ function modifierQuantite(produit, valeur){
   afficherPanier();
 }
 
+// Commande via WhatsApp
+function commanderWhatsApp(){
+  if(Object.keys(panier).length === 0){
+    alert("Votre panier est vide !");
+    return;
+  }
+  let message = "Je souhaite commander : ";
+  let details = [];
+  for(let produit in panier){
+    details.push(produit + " x" + panier[produit]);
+  }
+  message += details.join(", ");
+  let numero = "243891182454"; // Ton numéro WhatsApp
+  let lien = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
+  window.open(lien, "_blank");
+}
+
 // Affichage initial
 afficherPanier();
 </script>
 
 </body>
 </html>
-
