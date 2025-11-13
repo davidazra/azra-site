@@ -11,8 +11,8 @@
 }
 
 body {
-  background-color: #ffffff; /* fond blanc */
-  color: #000000; /* texte principal noir */
+  background-color: #f7f8fa;
+  color: #222;
   line-height: 1.6;
 }
 
@@ -25,8 +25,8 @@ body {
 
 /* ======= EN-TÊTE ======= */
 .header {
-  background: #ffffff; /* blanc */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -52,38 +52,42 @@ body {
 
 .logo h1 {
   font-size: 1.5rem;
-  color: #ff6600; /* accent orange */
+  color: #0078ff;
   font-weight: 700;
 }
 
 .nav a {
   margin-left: 15px;
   text-decoration: none;
-  color: #000000; /* texte noir */
+  color: #333;
   font-weight: 500;
   transition: 0.3s;
 }
 
 .nav a:hover,
 .nav a.active {
-  color: #ff6600; /* hover orange */
+  color: #0078ff;
 }
 
 .cart-link {
   font-weight: bold;
-  color: #000000;
 }
 
 /* ======= SECTION HERO ======= */
 .hero {
-  background: #fff8f0; /* fond blanc légèrement orangé */
-  color: #000000;
+  background: linear-gradient(to right, #0078ff, #00a3ff);
+  color: #fff;
   text-align: center;
   padding: 70px 20px;
 }
 
-.hero h2 span {
-  color: #ff6600; /* accent orange */
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero span {
+  color: #ffdf00;
 }
 
 .hero p {
@@ -92,8 +96,8 @@ body {
 }
 
 .btn {
-  background: #ff6600; /* bouton orange */
-  color: #ffffff; /* texte blanc */
+  background: #fff;
+  color: #0078ff;
   padding: 10px 20px;
   border-radius: 25px;
   text-decoration: none;
@@ -102,7 +106,8 @@ body {
 }
 
 .btn:hover {
-  background: #e65c00; /* orange plus foncé au hover */
+  background: #ffdf00;
+  color: #000;
 }
 
 /* ======= CATÉGORIES ======= */
@@ -113,19 +118,19 @@ body {
 
 .categories h2 {
   margin-bottom: 30px;
-  color: #000000; /* titre noir */
+  color: #0078ff;
 }
 
 .category-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   width: 90%;
   margin: auto;
 }
 
 .category {
-  background: #ffffff; /* cartes blanches */
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   padding: 15px;
@@ -148,31 +153,31 @@ body {
   max-height: 200px;
   object-fit: contain;
   border-radius: 8px;
-  background: #fff4eb; /* léger fond orangé clair */
+  background: #fff;
 }
 
 /* ======= PRODUITS EN VEDETTE ======= */
 .featured {
-  background: #ffffff;
+  background: #fff;
   padding: 50px 0;
   text-align: center;
 }
 
 .featured h2 {
-  color: #000000;
+  color: #0078ff;
   margin-bottom: 30px;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   width: 90%;
   margin: auto;
 }
 
 .product {
-  background: #ffffff; /* cartes blanches */
+  background: #f8f9fa;
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -195,18 +200,18 @@ body {
   max-height: 220px;
   object-fit: contain;
   border-radius: 8px;
-  background: #fff4eb;
+  background: #fff;
   display: block;
   margin: 0 auto;
 }
 
 .product h3 {
   margin: 10px 0 5px;
-  color: #000000;
+  color: #333;
 }
 
 .price {
-  color: #ff6600; /* prix orange */
+  color: #0078ff;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -215,14 +220,14 @@ body {
 .whatsapp {
   text-align: center;
   padding: 40px 20px;
-  background: #fff8f0; /* fond clair orangé */
-  color: #000000;
+  background: #0078ff;
+  color: #fff;
 }
 
 .btn-whatsapp {
   display: inline-block;
-  background: #ff6600;
-  color: #ffffff;
+  background: #25D366;
+  color: #fff;
   text-decoration: none;
   padding: 10px 25px;
   border-radius: 25px;
@@ -231,24 +236,26 @@ body {
 }
 
 .btn-whatsapp:hover {
-  background: #e65c00;
+  background: #1da851;
 }
 
 /* ======= FOOTER ======= */
 .footer {
-  background: #333333; /* gris foncé */
-  color: #ffffff;
+  background: #111;
+  color: #ccc;
   text-align: center;
   padding: 25px 0;
   font-size: 0.9rem;
 }
 
 .footer a {
-  color: #ff6600;
+  color: #0078ff;
+  text-decoration: none;
+  margin: 0 5px;
 }
 
 .footer a:hover {
-  color: #e65c00;
+  text-decoration: underline;
 }
 
 /* ======= RESPONSIVE ======= */
@@ -267,10 +274,5 @@ body {
 
   .hero p {
     font-size: 1rem;
-  }
-
-  .category-list,
-  .product-grid {
-    grid-template-columns: 1fr; /* une carte par ligne pour mobile */
   }
 }
