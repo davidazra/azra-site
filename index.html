@@ -121,23 +121,40 @@
     <button onclick="envoyerWhatsApp()">Envoyer la commande sur WhatsApp</button>
   </div>
 
-  <!-- JavaScript pour le panier -->
+  <!-- JavaScript pour le panier avec quantité -->
   <script>
-    let panier = [];
+    let panier = {}; // objet pour stocker produit => quantité
 
     function ajouterPanier(produit) {
-      panier.push(produit);
-      document.getElementById("listePanier").innerText = panier.join(", ");
+      if(panier[produit]) {
+        panier[produit] += 1; // incrémente la quantité
+      } else {
+        panier[produit] = 1; // premier ajout
+      }
+      afficherPanier();
       alert(produit + " ajouté au panier !");
     }
 
+    function afficherPanier() {
+      let texte = [];
+      for(let produit in panier) {
+        texte.push(produit + " (" + panier[produit] + ")");
+      }
+      document.getElementById("listePanier").innerText = texte.join(", ");
+    }
+
     function envoyerWhatsApp() {
-      if(panier.length === 0) {
+      if(Object.keys(panier).length === 0) {
         alert("Votre panier est vide !");
         return;
       }
-      let message = "Je souhaite commander : " + panier.join(", ");
-      let numero = "+243891182454"; // Remplace par ton numéro WhatsApp avec indicatif pays RDC
+      let message = "Je souhaite commander : ";
+      let details = [];
+      for(let produit in panier) {
+        details.push(produit + " x" + panier[produit]);
+      }
+      message += details.join(", ");
+      let numero = "243123456789"; // Remplace par ton numéro WhatsApp avec indicatif pays RDC
       let lien = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
       window.open(lien, "_blank");
     }
