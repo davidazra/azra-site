@@ -1,93 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panier - Azra</title>
-  <style>
-    body { font-family: Arial, sans-serif; background-color:#fff; margin:0; padding:0; }
-    header { background-color:#333; color:white; text-align:center; padding:20px; }
-    header h1, header p { margin:0; }
-    .cart-container { padding:20px; max-width:600px; margin:0 auto; }
-    .cart-item { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #ddd; padding:10px 0; }
-    .cart-item img { width:50px; height:auto; margin-right:10px; }
-    .cart-item-name { flex:2; }
-    .cart-item-quantity { display:flex; align-items:center; gap:5px; }
-    button { background-color: orange; color:black; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; font-weight:bold; }
-    button:hover { background-color:#ff9900; }
-    #actions { display:flex; justify-content:space-between; margin-top:20px; max-width:600px; margin-left:auto; margin-right:auto; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panier - Azra</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color:#fff; margin:0; padding:0; }
+  header { background-color:#333; color:white; padding:20px; text-align:center; }
+  header h1 { margin:0; color:orange; }
+  .container { padding:20px; max-width:800px; margin:0 auto; }
+  .panier-item { display:flex; align-items:center; border-bottom:1px solid #ddd; padding:10px 0; }
+  .panier-item img { width:80px; height:auto; margin-right:15px; border-radius:5px; }
+  .panier-item div { flex:1; }
+  .panier-item button { background-color:orange; color:black; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; }
+  .buttons { margin-top:20px; text-align:center; }
+  .buttons button { margin:0 10px; padding:10px 15px; font-weight:bold; border-radius:5px; border:none; background-color:orange; cursor:pointer; }
+  .buttons button:hover { background-color:#ff9900; }
+</style>
 </head>
 <body>
 
 <header>
-  <h1>Panier</h1>
-  <p>Azra - Boutique électronique</p>
+  <h1>Azra - Panier</h1>
 </header>
 
-<div class="cart-container" id="cartContainer">
-  <!-- Les produits du panier seront affichés ici -->
-</div>
+<div class="container">
+  <div id="panierContainer"></div>
 
-<div id="actions">
-  <button onclick="window.location.href='index.html'">Continuer vos achats</button>
-  <button onclick="commanderWhatsApp()">Commander</button>
+  <div class="buttons">
+    <button onclick="window.location.href='index.html'">Continuer vos achats</button>
+    <button id="commanderWhatsApp">Commander via WhatsApp</button>
+  </div>
 </div>
 
 <script>
 let panier = JSON.parse(localStorage.getItem('panier')) || {};
-
-// Miniatures pour chaque produit
-let images = {
+const images = {
   "Casque P9":"casque_p9.png",
   "Laptop Stand":"laptop_stand.jpg",
   "USB Dongle Bluetooth":"usb_dongle_bluetooth.jpg"
 };
 
 function afficherPanier(){
-  const container = document.getElementById('cartContainer');
+  const container = document.getElementById('panierContainer');
   container.innerHTML = '';
   for(let produit in panier){
-    let div = document.createElement('div');
-    div.className='cart-item';
-    div.innerHTML = `
+    const item = document.createElement('div');
+    item.className = 'panier-item';
+    item.innerHTML = `
       <img src="${images[produit]}" alt="${produit}">
-      <div class="cart-item-name">${produit}</div>
-      <div class="cart-item-quantity">
-        <button onclick="modifierQuantite('${produit}',-1)">-</button>
-        <span>${panier[produit]}</span>
-        <button onclick="modifierQuantite('${produit}',1)">+</button>
-      </div>
+      <div>${produit} - Quantité : ${panier[produit]}</div>
+      <button onclick="supprimerProduit('${produit}')">Supprimer</button>
     `;
-    container.appendChild(div);
+    container.appendChild(item);
+  }
+  if(Object.keys(panier).length === 0){
+    container.innerHTML = '<p>Votre panier est vide.</p>';
   }
 }
 
-function modifierQuantite(produit, valeur){
-  panier[produit] += valeur;
-  if(panier[produit]<=0) delete panier[produit];
+function supprimerProduit(produit){
+  delete panier[produit];
   localStorage.setItem('panier', JSON.stringify(panier));
   afficherPanier();
 }
 
-// Commande via WhatsApp
-function commanderWhatsApp(){
-  if(Object.keys(panier).length === 0){
-    alert("Votre panier est vide !");
-    return;
-  }
-  let message = "Je souhaite commander : ";
-  let details = [];
+document.getElementById('commanderWhatsApp').onclick = function(){
+  let message = "Bonjour Azra ! Je souhaite commander :\n";
   for(let produit in panier){
-    details.push(produit + " x" + panier[produit]);
+    message += `- ${produit} x${panier[produit]}\n`;
   }
-  message += details.join(", ");
-  let numero = "243891182454"; // Ton numéro WhatsApp
-  let lien = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
-  window.open(lien, "_blank");
-}
+  const url = "https://wa.me/243891182454?text=" + encodeURIComponent(message);
+  window.open(url, '_blank');
+};
 
-// Affichage initial
 afficherPanier();
 </script>
 
