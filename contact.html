@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Azra Shop</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Azra</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <h1>Shop Azra</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <img src="assets/img/logo.png" alt="Logo Azra">
-        <h1>Azra Shop</h1>
-      </div>
-      <nav class="nav">
-        <a href="index.html">Accueil</a>
-        <a href="produits.html">Produits</a>
-        <a href="contact.html" class="active">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Section principale -->
+    <main>
+        <section class="hero">
+            <h2>Bienvenue chez Shop Azra</h2>
+            <p>Vos accessoires électroniques de qualité à portée de clic !</p>
+        </section>
 
-  <!-- PAGE CONTACT -->
-  <section class="contact-page">
-    <h2>Contactez-nous</h2>
-    <p>Pour toute question ou commande, envoyez-nous un message sur WhatsApp :</p>
-    <a href="https://wa.me/243891182454?text=Bonjour%20Azra,%20je%20veux%20passer%20une%20commande" target="_blank" class="btn-whatsapp">💬 Envoyer un message sur WhatsApp</a>
+        <section class="produits">
+            <h2>Nos produits phares</h2>
+            <div class="produit-list">
+                <!-- Exemple de produit -->
+                <div class="produit">
+                    <img src="assets/img/laptop_stand.jpg" alt="Laptop Stand">
+                    <h3>Support pour Laptop</h3>
+                    <p>Confort et ergonomie pour votre bureau</p>
+                    <button>Ajouter au panier</button>
+                </div>
+                <div class="produit">
+                    <img src="assets/img/usb_dongle_bluetooth.jpg" alt="Dongle Bluetooth">
+                    <h3>Dongle Bluetooth</h3>
+                    <p>Connectez vos appareils sans fil facilement</p>
+                    <button>Ajouter au panier</button>
+                </div>
+                <div class="produit">
+                    <img src="assets/img/casque_p9.png" alt="Casque P9">
+                    <h3>Casque P9</h3>
+                    <p>Qualité audio supérieure pour votre musique</p>
+                    <button>Ajouter au panier</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <p style="margin-top: 30px;">Notre adresse :</p>
-    <p>Quartier XYZ, Ville, République Démocratique du Congo</p>
-    <p>Heures d’ouverture : Lundi – Samedi : 9h – 18h</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Azra Shop — Tous droits réservés.</p>
-      <p>Contactez-nous via WhatsApp pour toutes vos commandes.</p>
-    </div>
-  </footer>
-
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Shop Azra. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
-
