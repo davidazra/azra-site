@@ -1,4 +1,4 @@
-/* Reset simple */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +8,8 @@
 
 /* Body */
 body {
-    background-color: #ffffff; /* fond blanc */
-    color: #333333;
+    background-color: #ffffff;
+    color: #333;
     line-height: 1.6;
 }
 
@@ -43,11 +43,11 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
     text-align: center;
     padding: 50px 20px;
-    background-color: #fff3e0; /* léger orange clair */
+    background-color: #fff3e0;
 }
 
 .hero h2 {
@@ -57,6 +57,22 @@ nav ul li a:hover {
 
 .hero p {
     font-size: 1.2em;
+}
+
+.btn-hero {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-hero:hover {
+    background-color: #ff9933;
 }
 
 /* Produits */
@@ -84,7 +100,7 @@ nav ul li a:hover {
     width: 250px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .produit img {
@@ -111,11 +127,17 @@ nav ul li a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .produit button:hover {
     background-color: #ff9933;
     transform: scale(1.05);
+}
+
+.produit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* Footer */
@@ -125,4 +147,14 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+
+footer .social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer .social a:hover {
+    text-decoration: underline;
 }
