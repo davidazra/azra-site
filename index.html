@@ -1,96 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Azra Shop - Accessoires Électroniques</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Azra</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <h1>Shop Azra</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- ======= HEADER ======= -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <img src="assets/img/logo.png" alt="Logo Azra">
-        <h1>Azra Shop</h1>
-      </div>
-      <nav class="nav">
-        <a href="index.html" class="active">Accueil</a>
-        <a href="produits.html">Produits</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Section principale -->
+    <main>
+        <section class="hero">
+            <h2>Bienvenue chez Shop Azra</h2>
+            <p>Vos accessoires électroniques de qualité à portée de clic !</p>
+        </section>
 
-  <!-- ======= HERO SECTION ======= -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Bienvenue chez <span>Azra Shop</span></h2>
-      <p>Découvrez nos accessoires électroniques modernes, fiables et au meilleur prix.</p>
-      <a href="produits.html" class="btn">Voir nos produits</a>
-    </div>
-  </section>
+        <section class="produits">
+            <h2>Nos produits phares</h2>
+            <div class="produit-list">
+                <!-- Exemple de produit -->
+                <div class="produit">
+                    <img src="assets/img/laptop_stand.jpg" alt="Laptop Stand">
+                    <h3>Support pour Laptop</h3>
+                    <p>Confort et ergonomie pour votre bureau</p>
+                    <button>Ajouter au panier</button>
+                </div>
+                <div class="produit">
+                    <img src="assets/img/usb_dongle_bluetooth.jpg" alt="Dongle Bluetooth">
+                    <h3>Dongle Bluetooth</h3>
+                    <p>Connectez vos appareils sans fil facilement</p>
+                    <button>Ajouter au panier</button>
+                </div>
+                <div class="produit">
+                    <img src="assets/img/casque_p9.png" alt="Casque P9">
+                    <h3>Casque P9</h3>
+                    <p>Qualité audio supérieure pour votre musique</p>
+                    <button>Ajouter au panier</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- ======= CATÉGORIES ======= -->
-  <section class="categories">
-    <h2>Nos Catégories</h2>
-    <div class="category-list">
-      <div class="category">
-        <img src="assets/img/cat-ecouteurs.jpg" alt="Écouteurs">
-        <h3>Écouteurs</h3>
-      </div>
-      <div class="category">
-        <img src="assets/img/cat-casques.jpg" alt="Casques Bluetooth">
-        <h3>Casques Bluetooth</h3>
-      </div>
-      <div class="category">
-        <img src="assets/img/cat-gadgets.jpg" alt="Gadgets Tech">
-        <h3>Gadgets Tech</h3>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= PRODUITS VEDETTES ======= -->
-  <section class="produits-vedettes">
-    <h2>Produits en vedette</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="assets/img/earbuds1.jpg" alt="Écouteurs Bluetooth X100">
-        <h3>Écouteurs Bluetooth X100</h3>
-        <p class="price">45 000 CDF</p>
-        <a href="https://wa.me/243891182454?text=Bonjour%20Azra,%20je%20veux%20acheter%20Écouteurs%20Bluetooth%20X100" target="_blank" class="btn">Commander</a>
-      </div>
-      <div class="product">
-        <img src="assets/img/headset1.jpg" alt="Casque sans fil Pro">
-        <h3>Casque sans fil Pro</h3>
-        <p class="price">80 000 CDF</p>
-        <a href="https://wa.me/243891182454?text=Bonjour%20Azra,%20je%20veux%20acheter%20Casque%20sans%20fil%20Pro" target="_blank" class="btn">Commander</a>
-      </div>
-      <div class="product">
-        <img src="assets/img/radio1.jpg" alt="Mini radio Bluetooth">
-        <h3>Mini radio Bluetooth</h3>
-        <p class="price">35 000 CDF</p>
-        <a href="https://wa.me/243891182454?text=Bonjour%20Azra,%20je%20veux%20acheter%20Mini%20radio%20Bluetooth" target="_blank" class="btn">Commander</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= CONTACT RAPIDE WHATSAPP ======= -->
-  <section class="whatsapp">
-    <p>Une question ou une commande ?</p>
-    <a href="https://wa.me/243891182454?text=Bonjour%20Azra,%20je%20veux%20passer%20une%20commande" target="_blank" class="btn-whatsapp">💬 Commander sur WhatsApp</a>
-  </section>
-
-  <!-- ======= FOOTER ======= -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Azra Shop — Tous droits réservés.</p>
-      <p>Contactez-nous via WhatsApp pour toutes vos commandes.</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Shop Azra. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
