@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - Shop Azra</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Shop Azra</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu panier -->
+    <main>
+        <h2>Mon Panier</h2>
+        <div class="panier-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Prix</th>
+                        <th>Quantité</th>
+                        <th>Total</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody id="panier-items">
+                    <!-- Produits ajoutés via JS -->
+                </tbody>
+            </table>
+            <div class="panier-total">
+                <p>Total : <span id="total">0</span> $</p>
+                <button id="checkout-btn">Passer à la caisse</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Shop Azra. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JS panier -->
+    <script src="assets/js/panier.js"></script>
+</body>
+</html>
 
