@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <h1>Shop Azra</h1>
         <nav>
@@ -20,38 +19,42 @@
         </nav>
     </header>
 
-    <!-- Contenu panier -->
-    <main>
-        <h2>Mon Panier</h2>
-        <div class="panier-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produit</th>
-                        <th>Prix</th>
-                        <th>Quantité</th>
-                        <th>Total</th>
-                        <th>Supprimer</th>
-                    </tr>
-                </thead>
-                <tbody id="panier-items">
-                    <!-- Produits ajoutés via JS -->
-                </tbody>
-            </table>
-            <div class="panier-total">
-                <p>Total : <span id="total">0</span> $</p>
-                <button id="checkout-btn">Passer à la caisse</button>
-            </div>
+    <main class="panier-container">
+        <h2>Votre panier</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+            <tbody id="panier-items">
+                <!-- Produits ajoutés via JS -->
+            </tbody>
+        </table>
+        <div class="panier-total">
+            Total : <span id="total">0.00</span> $
         </div>
+	<div class="panier-actions">
+    		<button id="continue-btn">Continuer vos achats</button>
+    		<button id="checkout-btn">confirmer votre commande</button>
+	</div>
+
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Shop Azra. Tous droits réservés.</p>
+        <div class="social">
+            <a href="#">Facebook</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">WhatsApp</a>
+        </div>
     </footer>
 
-    <!-- JS panier -->
-    <script src="assets/js/panier.js"></script>
+    <script src="assets/js/panier.js" defer></script>
+
 </body>
 </html>
-
