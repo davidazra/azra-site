@@ -1,7 +1,17 @@
 // panier.js - version finale (devise : Fc)
 
 // Récupérer panier depuis localStorage ou créer vide
-let panier = JSON.parse(localStorage.getItem('panier')) || [];
+// Initialisation robuste du panier depuis localStorage
+let panier;
+try {
+    panier = JSON.parse(localStorage.getItem('panier'));
+    if (!Array.isArray(panier)) {
+        panier = [];
+    }
+} catch(e) {
+    panier = [];
+}
+
 
 /* ------------------------------
    Afficher le panier complet (panier.html)
