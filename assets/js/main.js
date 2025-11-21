@@ -23,3 +23,73 @@ orderButtons.forEach(btn => {
 // Scroll hero
 const hero = document.querySelector('.hero');
 window.addEventListener('scroll',()=>{if(hero){const s=window.scrollY;hero.style.opacity=1-s/600;}}); 
+
+const miniPanier = document.getElementById('mini-panier');
+
+if (miniPanier) {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    // Charger position sauvegardée
+    const savedPos = JSON.parse(localStorage.getItem('miniPanierPos'));
+    if (savedPos) {
+        miniPanier.style.left = savedPos.left + 'px';
+        miniPanier.style.top = savedPos.top + 'px';
+    } else {
+        miniPanier.style.left = '20px';
+        miniPanier.style.top = '20px';
+    }
+
+    function limitToScreen(x, y) {
+        const maxX = window.innerWidth - miniPanier.offsetWidth;
+        const maxY = window.innerHeight - miniPanier.offsetHeight;
+        return {
+            left: Math.min(Math.max(0, x), maxX),
+            top: Math.min(Math.max(0, y), maxY)
+        };
+    }
+
+    function startDrag(clientX, clientY) {
+        isDragging = true;
+        miniPanier.classList.add('dragging');
+        offsetX = clientX - miniPanier.getBoundingClientRect().left;
+        offsetY = clientY - miniPanier.getBoundingClientRect().top;
+    }
+
+    function doDrag(clientX, clientY) {
+        if (!isDragging) return;
+        const pos = limitToScreen(clientX - offsetX, clientY - offsetY);
+        miniPanier.style.left = pos.left + 'px';
+        miniPanier.style.top = pos.top + 'px';
+    }
+
+    function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        miniPanier.classList.remove('dragging');
+        // sauvegarder position
+        localStorage.setItem('miniPanierPos', JSON.stringify({
+            left: parseInt(miniPanier.style.left),
+            top: parseInt(miniPanier.style.top)
+        }));
+    }
+
+    // Desktop
+    miniPanier.addEventListener('mousedown', e => { startDrag(e.clientX, e.clientY); e.preventDefault(); });
+    document.addEventListener('mousemove', e => doDrag(e.clientX, e.clientY));
+    document.addEventListener('mouseup', endDrag);
+
+    // Mobile
+    miniPanier.addEventListener('touchstart', e => {
+        const touch = e.touches[0];
+        startDrag(touch.clientX, touch.clientY);
+        e.preventDefault();
+    }, {passive: false});
+
+    document.addEventListener('touchmove', e => {
+        const touch = e.touches[0];
+        doDrag(touch.clientX, touch.clientY);
+    }, {passive: false});
+
+    document.addEventListener('touchend', endDrag);
+}
