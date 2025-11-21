@@ -46,7 +46,7 @@
                     <p>Confort et ergonomie pour votre bureau</p>
                     <span class="prix">25000Fc</span>
                     <button class="btn" onclick="ajouterAuPanier('Support pour Laptop', 25000)">Ajouter au panier</button>
-                </div>
+                </div>                 
                 <div class="produit product">
                     <img src="assets/img/usb_dongle_bluetooth.jpg" alt="Dongle Bluetooth">
                     <h3>Dongle Bluetooth</h3>
@@ -88,66 +88,6 @@
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/panier.js" defer></script>
     <script>
-        // Mini-panier OPTION B avec boutons + / -
-        function afficherMiniPanierOptionB() {
-            const miniCart = document.getElementById('mini-cart-items');
-            if (!miniCart) return;
-
-            miniCart.innerHTML = '';
-            const derniersProduits = panier.slice(-3).reverse();
-
-            const miniPanierSection = document.querySelector('.mini-panier');
-            if (derniersProduits.length === 0) {
-                miniPanierSection.classList.add('hidden');
-            } else {
-                miniPanierSection.classList.remove('hidden');
-                derniersProduits.forEach((item, index) => {
-                    const div = document.createElement('div');
-                    div.className = 'mini-item';
-                    div.innerHTML = `
-    <span>${item.nom}</span><br>
-    <span>${item.quantite} x ${item.prix} Fc</span>
-    <div class='qty-control'>
-        <button class='moins' data-index='${index}'>-</button>
-        <button class='plus' data-index='${index}'>+</button>
-    </div>
-`;
-
-                    `;
-                    miniCart.appendChild(div);
-                });
-
-                // Événements boutons + / -
-                document.querySelectorAll('.plus').forEach(btn => {
-                    btn.addEventListener('click', e => {
-                        const idx = e.target.dataset.index;
-                        panier[idx].quantite++;
-                        sauvegarderEtAfficher();
-                        afficherMiniPanierOptionB();
-                    });
-                });
-
-                document.querySelectorAll('.moins').forEach(btn => {
-                    btn.addEventListener('click', e => {
-                        const idx = e.target.dataset.index;
-                        if (panier[idx].quantite > 1) {
-                            panier[idx].quantite--;
-                        } else {
-                            panier.splice(idx, 1);
-                        }
-                        sauvegarderEtAfficher();
-                        afficherMiniPanierOptionB();
-                    });
-                });
-            }
-        }
-
-        // Mettre à jour mini-panier à chaque ajout
-        const boutons = document.querySelectorAll('.produit .btn');
-        boutons.forEach(btn => btn.addEventListener('click', afficherMiniPanierOptionB));
-
-        // Initialisation
-        afficherMiniPanierOptionB();
-    </script>
+       
 </body>
 </html>
