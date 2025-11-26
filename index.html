@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop Azra - Accessoires cellulaires et informatique de qualité.">
+    <meta name="keywords" content="accessoires, informatique, cellulaires, shop, Azra">
+    <meta name="author" content="Shop Azra">
     <title>Shop Azra</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/ba9ca938ed.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <h1>Shop Azra</h1>
-        <nav>
-            <ul>
+        
+        <div class="logo_div">
+            <div class="logo">
+                <p><a href="#" id="logo">Azra <span>.</span>
+                </a></p>
+            </div>
+                
+        </div>
+        <div class="menu"><ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="produits.html">Produits</a></li>
                 <li><a href="panier.html">Panier</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </nav>
+        </div>   
+        <div class="btn_heather">
+            <button class="btn">
+                <i class="fa-solid fa-phone"></i>
+                <span>Service client</span>
+            </button>
+        </div>
     </header>
 
+
     <!-- Section principale -->
-    <main>
         <!-- Bandeau promo -->
         <nav class="promo-marquee">
             <div class="marquee">
@@ -31,59 +47,120 @@
 
         <!-- Hero -->
         <section class="hero">
-            <h2>Bienvenue chez Shop Azra</h2>
-            <p>Vos accessoires électroniques de qualité à portée de clic !</p>
+            <h2>Bienvenue chez Azra</h2>
+            <p>Vos accessoires électroniques de qualité à portée de main !</p>
             <a href="produits.html" class="btn-hero">Voir nos produits</a>
         </section>
 
-        <!-- Produits phares -->
-        <section class="produits">
-            <h2>Nos produits phares</h2>
-            <div class="produit-list">
-                <div class="produit product">
-                    <img src="assets/img/laptop_stand.jpg" alt="Support pour Laptop">
-                    <h3>Support pour Laptop</h3>
-                    <p>Confort et ergonomie pour votre bureau</p>
-                    <span class="prix">25000Fc</span>
-                    <button class="btn" onclick="ajouterAuPanier('Support pour Laptop', 25000)">Ajouter au panier</button>
-                </div>                 
-                <div class="produit product">
-                    <img src="assets/img/usb_dongle_bluetooth.jpg" alt="Dongle Bluetooth">
-                    <h3>Dongle Bluetooth</h3>
-                    <p>Connectez vos appareils sans fil facilement</p>
-                    <span class="prix">21500Fc</span>
-                    <button class="btn" onclick="ajouterAuPanier('Dongle Bluetooth', 21500)">Ajouter au panier</button>
-                </div>
-                <div class="produit product">
-                    <img src="assets/img/casque_p9.png" alt="Casque P9">
-                    <h3>Casque P9</h3>
-                    <p>Qualité audio supérieure pour votre musique</p>
-                    <span class="prix">20500Fc</span>
-                    <button class="btn" onclick="ajouterAuPanier('Casque P9', 20500)">Ajouter au panier</button>
-                </div>
-            </div>
-        </section>
+<section class="pourquoi-azra">
+    <h2>Pourquoi choisir Shop Azra ?</h2>
+    <div class="features">
+        <div class="feature">
+            <i class="fa-solid fa-truck"></i>
+            <h3>Livraison rapide</h3>
+            <p>Recevez vos produits en un temps record.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-lock"></i>
+            <h3>Paiement sécurisé</h3>
+            <p>Transactions protégées et fiables.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-star"></i>
+            <h3>Produits de qualité</h3>
+            <p>Nous sélectionnons le meilleur pour vous.</p>
+        </div>
+    </div>
+</section>
+    <!-------- nos catégories ---------->
+<section class="categories">
+    <h2>Nos catégories</h2>
+    <div class="categorie-list">
+        <div class="categorie" data-filtre="ordinateurs">
+            <img src="assets/img/ordinateur.jpg" alt="Ordinateurs">
+            <h3>Bureautique</h3>
+        </div>
+        <div class="categorie" data-filtre="audio">
+            <img src="assets/img/audio.png" alt="Audio">
+            <h3>Audio</h3>
+        </div>
+        <div class="categorie" data-filtre="accessoires-mobiles">
+            <img src="assets/img/chargeur.jpeg" alt="Accessoires mobiles">
+            <h3>chargeurs</h3>
+        </div>
+        <div class="categorie" data-filtre="gaming">
+            <img src="assets/img/player.jpeg" alt="Gaming">
+            <h3>Gaming</h3>
+        </div>
+        <div class="categorie" data-filtre="domicile">
+            <img src="assets/img/glass.jpeg" alt="Maison & Bureau">
+            <h3>Protection</h3>
+        </div>
+    </div>
+</section>
 
-        <!-- Mini-panier flottant OPTION B -->
-        <section class="mini-panier" id="mini-panier">
-            <h2>Votre sélection</h2>
-            <div id="mini-cart-items">
-                <!-- Les derniers produits ajoutés apparaîtront ici via JS -->
-            </div>
-            <a href="panier.html" class="btn-voir-panier">Voir le panier</a>
-        </section>
-    </main>
+
+         <!-- Section produit -->
+       <article class="produits">
+    <h2>Nos produits phares</h2>
+    <div class="produit-list">
+        <div class="produit">
+            <img src="assets/img/jbl_m11.jpeg" alt="Support pour Laptop">
+            <h3>Casque Jbl M11</h3>
+            <p>Confort et ergonomie pour votre oreilles</p>
+            <span class="prix">25000Fc</span>
+            <button class="btn-ajouter" 
+                    data-nom="Support pour Laptop" 
+                    data-prix="25000">
+                <span>Ajouter au</span>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+        </div>
+
+        <div class="produit">
+            <img src="assets/img/banner-image.png" alt="Dongle Bluetooth">
+            <h3>Montre connectée</h3>
+            <p>Connectez-vous à votre appareils facilement</p>
+            <span class="prix">21500Fc</span>
+            <button class="btn-ajouter" 
+                    data-nom="Dongle Bluetooth" 
+                    data-prix="21500">
+                <span>Ajouter au</span>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+        </div>
+
+        <div class="produit">
+            <img src="assets/img/casque_p9.png" alt="Casque P9">
+            <h3>Casque P9</h3>
+            <p>Qualité audio supérieure pour votre musique</p>
+            <span class="prix">20500Fc</span>
+            <button class="btn-ajouter" 
+                    data-nom="Casque P9" 
+                    data-prix="20500">
+                <span>Ajouter au</span>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+        </div>
+
+    </div>
+</article>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Shop Azra. Tous droits réservés.</p>
-        <div class="social">
-            <a href="#">Facebook</a> | 
-            <a href="#">Instagram</a> | 
-            <a href="#">WhatsApp</a>
+   <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Shop Azra - Tous droits réservés</p>
+        <p>
+            <a href="#">Contact</a> | 
+            <a href="#">Mentions légales</a>
+        </p>
+        <div class="socials">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-    </footer>
-
+    </div>
+</footer>
     <!-- Scripts JS -->
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/panier.js" defer></script>
